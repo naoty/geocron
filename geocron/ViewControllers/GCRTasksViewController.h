@@ -1,5 +1,5 @@
 //
-//  GCRViewController.h
+//  GCRTasksViewController.h
 //  geocron
 //
 //  Created by Naoto Kaneko on 2014/06/24.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GCRViewController : UIViewController
+@interface GCRTasksViewController : UITableViewController
 
 @end

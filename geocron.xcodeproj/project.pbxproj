@@ -10,17 +10,17 @@
 		3D0467591959B85B00B925B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0467581959B85B00B925B5 /* Foundation.framework */; };
 		3D04675B1959B85B00B925B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D04675A1959B85B00B925B5 /* CoreGraphics.framework */; };
 		3D04675D1959B85B00B925B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D04675C1959B85B00B925B5 /* UIKit.framework */; };
-		3D0467631959B85B00B925B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D0467611959B85B00B925B5 /* InfoPlist.strings */; };
-		3D0467651959B85B00B925B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0467641959B85B00B925B5 /* main.m */; };
-		3D0467691959B85B00B925B5 /* GCRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0467681959B85B00B925B5 /* GCRAppDelegate.m */; };
-		3D04676C1959B85B00B925B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D04676A1959B85B00B925B5 /* Main.storyboard */; };
-		3D04676F1959B85B00B925B5 /* GCRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D04676E1959B85B00B925B5 /* GCRViewController.m */; };
 		3D0467711959B85B00B925B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D0467701959B85B00B925B5 /* Images.xcassets */; };
 		3D0467781959B85B00B925B5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0467771959B85B00B925B5 /* XCTest.framework */; };
 		3D0467791959B85B00B925B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0467581959B85B00B925B5 /* Foundation.framework */; };
 		3D04677A1959B85B00B925B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D04675C1959B85B00B925B5 /* UIKit.framework */; };
 		3D0467821959B85B00B925B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D0467801959B85B00B925B5 /* InfoPlist.strings */; };
 		3D0467841959B85B00B925B5 /* geocronTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0467831959B85B00B925B5 /* geocronTests.m */; };
+		3D0467981959BA8C00B925B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0467911959BA8C00B925B5 /* main.m */; };
+		3D0467991959BA8C00B925B5 /* GCRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0467941959BA8C00B925B5 /* GCRAppDelegate.m */; };
+		3D04679A1959BA8C00B925B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D0467961959BA8C00B925B5 /* Main.storyboard */; };
+		3D04679D1959BAFA00B925B5 /* GCRTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D04679C1959BAFA00B925B5 /* GCRTasksViewController.m */; };
+		3D0467A01959DF7700B925B5 /* GCRTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D04679F1959DF7700B925B5 /* GCRTaskCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,21 +38,22 @@
 		3D0467581959B85B00B925B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3D04675A1959B85B00B925B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3D04675C1959B85B00B925B5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		3D0467601959B85B00B925B5 /* geocron-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "geocron-Info.plist"; sourceTree = "<group>"; };
-		3D0467621959B85B00B925B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3D0467641959B85B00B925B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3D0467661959B85B00B925B5 /* geocron-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "geocron-Prefix.pch"; sourceTree = "<group>"; };
-		3D0467671959B85B00B925B5 /* GCRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCRAppDelegate.h; sourceTree = "<group>"; };
-		3D0467681959B85B00B925B5 /* GCRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCRAppDelegate.m; sourceTree = "<group>"; };
-		3D04676B1959B85B00B925B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3D04676D1959B85B00B925B5 /* GCRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCRViewController.h; sourceTree = "<group>"; };
-		3D04676E1959B85B00B925B5 /* GCRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCRViewController.m; sourceTree = "<group>"; };
 		3D0467701959B85B00B925B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3D0467761959B85B00B925B5 /* geocronTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = geocronTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0467771959B85B00B925B5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3D04677F1959B85B00B925B5 /* geocronTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "geocronTests-Info.plist"; sourceTree = "<group>"; };
 		3D0467811959B85B00B925B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3D0467831959B85B00B925B5 /* geocronTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = geocronTests.m; sourceTree = "<group>"; };
+		3D04678F1959BA8C00B925B5 /* geocron-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "geocron-Info.plist"; sourceTree = "<group>"; };
+		3D0467901959BA8C00B925B5 /* geocron-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "geocron-Prefix.pch"; sourceTree = "<group>"; };
+		3D0467911959BA8C00B925B5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3D0467931959BA8C00B925B5 /* GCRAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCRAppDelegate.h; sourceTree = "<group>"; };
+		3D0467941959BA8C00B925B5 /* GCRAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRAppDelegate.m; sourceTree = "<group>"; };
+		3D0467961959BA8C00B925B5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3D04679B1959BAFA00B925B5 /* GCRTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCRTasksViewController.h; sourceTree = "<group>"; };
+		3D04679C1959BAFA00B925B5 /* GCRTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRTasksViewController.m; sourceTree = "<group>"; };
+		3D04679E1959DF7700B925B5 /* GCRTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCRTaskCell.h; sourceTree = "<group>"; };
+		3D04679F1959DF7700B925B5 /* GCRTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRTaskCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,26 +113,13 @@
 		3D04675E1959B85B00B925B5 /* geocron */ = {
 			isa = PBXGroup;
 			children = (
-				3D0467671959B85B00B925B5 /* GCRAppDelegate.h */,
-				3D0467681959B85B00B925B5 /* GCRAppDelegate.m */,
-				3D04676A1959B85B00B925B5 /* Main.storyboard */,
-				3D04676D1959B85B00B925B5 /* GCRViewController.h */,
-				3D04676E1959B85B00B925B5 /* GCRViewController.m */,
+				3D04678D1959BA8C00B925B5 /* Models */,
+				3D0467951959BA8C00B925B5 /* Views */,
+				3D0467921959BA8C00B925B5 /* ViewControllers */,
+				3D04678E1959BA8C00B925B5 /* SupportingFiles */,
 				3D0467701959B85B00B925B5 /* Images.xcassets */,
-				3D04675F1959B85B00B925B5 /* Supporting Files */,
 			);
 			path = geocron;
-			sourceTree = "<group>";
-		};
-		3D04675F1959B85B00B925B5 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3D0467601959B85B00B925B5 /* geocron-Info.plist */,
-				3D0467611959B85B00B925B5 /* InfoPlist.strings */,
-				3D0467641959B85B00B925B5 /* main.m */,
-				3D0467661959B85B00B925B5 /* geocron-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		3D04677D1959B85B00B925B5 /* geocronTests */ = {
@@ -150,6 +138,44 @@
 				3D0467801959B85B00B925B5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3D04678D1959BA8C00B925B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3D04678E1959BA8C00B925B5 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3D04678F1959BA8C00B925B5 /* geocron-Info.plist */,
+				3D0467901959BA8C00B925B5 /* geocron-Prefix.pch */,
+				3D0467911959BA8C00B925B5 /* main.m */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		3D0467921959BA8C00B925B5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D0467931959BA8C00B925B5 /* GCRAppDelegate.h */,
+				3D0467941959BA8C00B925B5 /* GCRAppDelegate.m */,
+				3D04679B1959BAFA00B925B5 /* GCRTasksViewController.h */,
+				3D04679C1959BAFA00B925B5 /* GCRTasksViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3D0467951959BA8C00B925B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D0467961959BA8C00B925B5 /* Main.storyboard */,
+				3D04679E1959DF7700B925B5 /* GCRTaskCell.h */,
+				3D04679F1959DF7700B925B5 /* GCRTaskCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +255,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D04679A1959BA8C00B925B5 /* Main.storyboard in Resources */,
 				3D0467711959B85B00B925B5 /* Images.xcassets in Resources */,
-				3D0467631959B85B00B925B5 /* InfoPlist.strings in Resources */,
-				3D04676C1959B85B00B925B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +275,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D04676F1959B85B00B925B5 /* GCRViewController.m in Sources */,
-				3D0467651959B85B00B925B5 /* main.m in Sources */,
-				3D0467691959B85B00B925B5 /* GCRAppDelegate.m in Sources */,
+				3D0467981959BA8C00B925B5 /* main.m in Sources */,
+				3D04679D1959BAFA00B925B5 /* GCRTasksViewController.m in Sources */,
+				3D0467991959BA8C00B925B5 /* GCRAppDelegate.m in Sources */,
+				3D0467A01959DF7700B925B5 /* GCRTaskCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,22 +301,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3D0467611959B85B00B925B5 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3D0467621959B85B00B925B5 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3D04676A1959B85B00B925B5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3D04676B1959B85B00B925B5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3D0467801959B85B00B925B5 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -375,11 +385,11 @@
 		3D0467881959B85B00B925B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Picon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "geocron/geocron-Prefix.pch";
-				INFOPLIST_FILE = "geocron/geocron-Info.plist";
+				GCC_PREFIX_HEADER = "geocron/SupportingFiles/geocron-Prefix.pch";
+				INFOPLIST_FILE = "geocron/SupportingFiles/geocron-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -388,11 +398,11 @@
 		3D0467891959B85B00B925B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Picon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "geocron/geocron-Prefix.pch";
-				INFOPLIST_FILE = "geocron/geocron-Info.plist";
+				GCC_PREFIX_HEADER = "geocron/SupportingFiles/geocron-Prefix.pch";
+				INFOPLIST_FILE = "geocron/SupportingFiles/geocron-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -457,6 +467,7 @@
 				3D0467891959B85B00B925B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D04678A1959B85B00B925B5 /* Build configuration list for PBXNativeTarget "geocronTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +476,7 @@
 				3D04678C1959B85B00B925B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
