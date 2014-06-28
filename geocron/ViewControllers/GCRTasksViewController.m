@@ -28,9 +28,9 @@
     [super viewDidLoad];
     
     self.tasks = @[
-        @{@"datetime": @"8:00", @"days": @"Everyday", @"url": @"http://www.example.com?latitude={latitude}&longitude={longitude}"},
-        @{@"datetime": @"13:00", @"days": @"Mon, Tue, Wed, Thu, Weekend", @"url": @"http://www.example.com?latitude={latitude}&longitude={longitude}"},
-        @{@"datetime": @"20:00", @"days": @"Weekdays, Sat", @"url": @"http://www.example.com?latitude={latitude}&longitude={longitude}"}
+        @{@"time": @"8:00", @"repeats": @"Everyday", @"url": @"http://www.example.com?latitude={latitude}&longitude={longitude}"},
+        @{@"time": @"13:00", @"repeats": @"Mon, Tue, Wed, Thu, Weekend", @"url": @"http://www.example.com?latitude={latitude}&longitude={longitude}"},
+        @{@"time": @"20:00", @"repeats": @"Weekdays, Sat", @"url": @"http://www.example.com?latitude={latitude}&longitude={longitude}"}
     ];
 }
 
@@ -56,8 +56,8 @@
     GCRTaskCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell" forIndexPath:indexPath];
     
     NSDictionary *task = self.tasks[indexPath.row];
-    cell.datetimeLabel.text = task[@"datetime"];
-    cell.daysLabel.text = task[@"days"];
+    cell.timeLabel.text = task[@"time"];
+    cell.repeatsLabel.text = task[@"repeats"];
     cell.urlLabel.text = task[@"url"];
     
     return cell;

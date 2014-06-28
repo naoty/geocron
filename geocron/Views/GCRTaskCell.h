@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface GCRTaskCell : UITableViewCell
-@property (nonatomic, weak) IBOutlet UILabel *datetimeLabel;
-@property (nonatomic, weak) IBOutlet UILabel *daysLabel;
+@property (nonatomic, weak) IBOutlet UILabel *timeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *repeatsLabel;
 @property (nonatomic, weak) IBOutlet UILabel *urlLabel;
 @end
