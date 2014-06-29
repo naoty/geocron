@@ -10,6 +10,11 @@
 
 @interface GCRNewTaskController : UITableViewController
 
+@property (nonatomic, weak) IBOutlet UIDatePicker *timePicker;
+@property (nonatomic, weak) IBOutlet UILabel *repeatsTextLabel;
+@property (nonatomic, weak) IBOutlet UITextField *urlStringField;
+
 - (IBAction)didTappedCancelButton:(id)sender;
+- (IBAction)didTappedSaveButton:(id)sender;
 
 @end

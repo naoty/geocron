@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  geocron
+
+  Created by Naoto Kaneko on 2014/06/29.
+  Copyright (c) 2014年 Naoto Kaneko. All rights reserved.
+*/
+
+"GCRTaskDayNone" = "Never";
+"GCRTaskDaySunday" = "Sun";
+"GCRTaskDayMonday" = "Mon";
+"GCRTaskDayTuesday" = "Tue";
+"GCRTaskDayWednesday" = "Wed";
+"GCRTaskDayThursday" = "Thu";
+"GCRTaskDayFriday" = "Fri";
+"GCRTaskDaySaturday" = "Sat";
+"GCRTaskDayWeekday" = "Weekday";
+"GCRTaskDayWeekend" = "Weekend";
+"GCRTaskDayEveryday" = "Everyday";

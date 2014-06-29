@@ -22,7 +22,11 @@
 		3D04679D1959BAFA00B925B5 /* GCRTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D04679C1959BAFA00B925B5 /* GCRTasksViewController.m */; };
 		3D0467A01959DF7700B925B5 /* GCRTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D04679F1959DF7700B925B5 /* GCRTaskCell.m */; };
 		3D0C9651195C86A7006D82F6 /* GCRNewTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D0C9650195C86A7006D82F6 /* GCRNewTaskController.m */; };
-		3DB06FDE195EBB620038DF6E /* GCRRepeatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DB06FDD195EBB620038DF6E /* GCRRepeatsViewController.m */; };
+		3D13A7F8195EC9A600301CF0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D13A7F6195EC9A600301CF0 /* Model.xcdatamodeld */; };
+		3D13A7FA195ECA3000301CF0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D13A7F9195ECA3000301CF0 /* CoreData.framework */; };
+		3D13A7FD195ECBA600301CF0 /* GCRTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D13A7FC195ECBA600301CF0 /* GCRTask.m */; };
+		3D3B03C5195F2B0C00204144 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D3B03C7195F2B0C00204144 /* Localizable.strings */; };
+		3DB06FDE195EBB620038DF6E /* GCRTaskDaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DB06FDD195EBB620038DF6E /* GCRTaskDaysViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +62,13 @@
 		3D04679F1959DF7700B925B5 /* GCRTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRTaskCell.m; sourceTree = "<group>"; };
 		3D0C964F195C86A7006D82F6 /* GCRNewTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCRNewTaskController.h; sourceTree = "<group>"; };
 		3D0C9650195C86A7006D82F6 /* GCRNewTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRNewTaskController.m; sourceTree = "<group>"; };
-		3DB06FDC195EBB620038DF6E /* GCRRepeatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCRRepeatsViewController.h; sourceTree = "<group>"; };
-		3DB06FDD195EBB620038DF6E /* GCRRepeatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRRepeatsViewController.m; sourceTree = "<group>"; };
+		3D13A7F7195EC9A600301CF0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		3D13A7F9195ECA3000301CF0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3D13A7FB195ECBA600301CF0 /* GCRTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCRTask.h; sourceTree = "<group>"; };
+		3D13A7FC195ECBA600301CF0 /* GCRTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRTask.m; sourceTree = "<group>"; };
+		3D3B03C6195F2B0C00204144 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3DB06FDC195EBB620038DF6E /* GCRTaskDaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCRTaskDaysViewController.h; sourceTree = "<group>"; };
+		3DB06FDD195EBB620038DF6E /* GCRTaskDaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRTaskDaysViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D13A7FA195ECA3000301CF0 /* CoreData.framework in Frameworks */,
 				3D04675B1959B85B00B925B5 /* CoreGraphics.framework in Frameworks */,
 				3D04675D1959B85B00B925B5 /* UIKit.framework in Frameworks */,
 				3D0467591959B85B00B925B5 /* Foundation.framework in Frameworks */,
@@ -108,6 +118,7 @@
 		3D0467571959B85B00B925B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D13A7F9195ECA3000301CF0 /* CoreData.framework */,
 				3D0467581959B85B00B925B5 /* Foundation.framework */,
 				3D04675A1959B85B00B925B5 /* CoreGraphics.framework */,
 				3D04675C1959B85B00B925B5 /* UIKit.framework */,
@@ -149,6 +160,9 @@
 		3D04678D1959BA8C00B925B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3D13A7F6195EC9A600301CF0 /* Model.xcdatamodeld */,
+				3D13A7FB195ECBA600301CF0 /* GCRTask.h */,
+				3D13A7FC195ECBA600301CF0 /* GCRTask.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,6 +172,7 @@
 			children = (
 				3D04678F1959BA8C00B925B5 /* geocron-Info.plist */,
 				3D0467901959BA8C00B925B5 /* geocron-Prefix.pch */,
+				3D3B03C7195F2B0C00204144 /* Localizable.strings */,
 				3D0467911959BA8C00B925B5 /* main.m */,
 			);
 			path = SupportingFiles;
@@ -172,8 +187,8 @@
 				3D04679C1959BAFA00B925B5 /* GCRTasksViewController.m */,
 				3D0C964F195C86A7006D82F6 /* GCRNewTaskController.h */,
 				3D0C9650195C86A7006D82F6 /* GCRNewTaskController.m */,
-				3DB06FDC195EBB620038DF6E /* GCRRepeatsViewController.h */,
-				3DB06FDD195EBB620038DF6E /* GCRRepeatsViewController.m */,
+				3DB06FDC195EBB620038DF6E /* GCRTaskDaysViewController.h */,
+				3DB06FDD195EBB620038DF6E /* GCRTaskDaysViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -266,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D04679A1959BA8C00B925B5 /* Main.storyboard in Resources */,
+				3D3B03C5195F2B0C00204144 /* Localizable.strings in Resources */,
 				3D0467711959B85B00B925B5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,8 +304,10 @@
 				3D0467981959BA8C00B925B5 /* main.m in Sources */,
 				3D04679D1959BAFA00B925B5 /* GCRTasksViewController.m in Sources */,
 				3D0C9651195C86A7006D82F6 /* GCRNewTaskController.m in Sources */,
+				3D13A7F8195EC9A600301CF0 /* Model.xcdatamodeld in Sources */,
+				3D13A7FD195ECBA600301CF0 /* GCRTask.m in Sources */,
 				3D0467991959BA8C00B925B5 /* GCRAppDelegate.m in Sources */,
-				3DB06FDE195EBB620038DF6E /* GCRRepeatsViewController.m in Sources */,
+				3DB06FDE195EBB620038DF6E /* GCRTaskDaysViewController.m in Sources */,
 				3D0467A01959DF7700B925B5 /* GCRTaskCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +337,14 @@
 				3D0467811959B85B00B925B5 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3D3B03C7195F2B0C00204144 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D3B03C6195F2B0C00204144 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -491,6 +517,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3D13A7F6195EC9A600301CF0 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3D13A7F7195EC9A600301CF0 /* Model.xcdatamodel */,
+			);
+			currentVersion = 3D13A7F7195EC9A600301CF0 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3D04674D1959B85B00B925B5 /* Project object */;
 }

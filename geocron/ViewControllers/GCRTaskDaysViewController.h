@@ -1,5 +1,5 @@
 //
-//  GCRRepeatsViewController.h
+//  GCRTaskDaysViewController.h
 //  geocron
 //
 //  Created by Naoto Kaneko on 2014/06/28.
@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GCRRepeatsViewController : UITableViewController
+@class GCRTask;
+
+@interface GCRTaskDaysViewController : UITableViewController
+
+@property (nonatomic) GCRTask *task;
 
 @end

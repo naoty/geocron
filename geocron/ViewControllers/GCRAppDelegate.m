@@ -6,7 +6,14 @@
 //  Copyright (c) 2014年 Naoto Kaneko. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
 #import "GCRAppDelegate.h"
+
+@interface GCRAppDelegate ()
+@property (nonatomic) NSURL *applicationDocumentDirectory;
+@property (nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic) NSManagedObjectModel *managedObjectModel;
+@end
 
 @implementation GCRAppDelegate
 
@@ -41,6 +48,58 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Private methods
+
+- (NSURL *)applicationDocumentDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+#pragma mark - Core Data
+
+- (NSManagedObjectContext *)managedObjectContext
+{
+    if (_managedObjectContext) {
+        return _managedObjectContext;
+    }
+    
+    if (self.persistentStoreCoordinator) {
+        self.managedObjectContext = [NSManagedObjectContext new];
+        self.managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
+    }
+    return self.managedObjectContext;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+{
+    if (_persistentStoreCoordinator) {
+        return _persistentStoreCoordinator;
+    }
+    
+    NSURL *storeURL = [self.applicationDocumentDirectory URLByAppendingPathComponent:@"geocron.sqlite"];
+    
+    NSError *error = nil;
+    self.persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
+    [self.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error];
+    if (error) {
+        NSLog(@"Error: %@", error);
+        abort();
+    }
+    
+    return self.persistentStoreCoordinator;
+}
+
+- (NSManagedObjectModel *)managedObjectModel
+{
+    if (_managedObjectModel) {
+        return _managedObjectModel;
+    }
+    
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"momd"];
+    self.managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return self.managedObjectModel;
 }
 
 @end

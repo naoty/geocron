@@ -11,5 +11,6 @@
 @interface GCRAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
