@@ -6,11 +6,15 @@
 //  Copyright (c) 2014年 Naoto Kaneko. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
 #import "GCRTasksViewController.h"
+#import "GCRAppDelegate.h"
 #import "GCRTaskCell.h"
+#import "GCRTask.h"
 
 @interface GCRTasksViewController ()
-@property (nonatomic) NSArray *tasks;
+@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) NSDateFormatter *dateFormatter;
 @end
 
 @implementation GCRTasksViewController
@@ -27,11 +31,26 @@
 {
     [super viewDidLoad];
     
-    self.tasks = @[
-        @{@"time": @"8:00", @"repeats": @"Everyday", @"url": @"http://www.example.com?latitude={latitude}&longitude={longitude}"},
-        @{@"time": @"13:00", @"repeats": @"Mon, Tue, Wed, Thu, Weekend", @"url": @"http://www.example.com?latitude={latitude}&longitude={longitude}"},
-        @{@"time": @"20:00", @"repeats": @"Weekdays, Sat", @"url": @"http://www.example.com?latitude={latitude}&longitude={longitude}"}
-    ];
+    self.dateFormatter = [NSDateFormatter new];
+    self.dateFormatter.dateFormat = @"HH:mm";
+    
+    GCRAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *managedObjectContext = appDelegate.managedObjectContext;
+    
+    NSFetchRequest *request = [NSFetchRequest new];
+    request.entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:managedObjectContext];
+    request.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"time" ascending:YES]];
+    request.fetchBatchSize = 10;
+    
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                                                    managedObjectContext:managedObjectContext
+                                                                      sectionNameKeyPath:nil
+                                                                               cacheName:nil];
+    
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        NSLog(@"Failed to fetch: %@", error);
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,26 +58,27 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Table view data source
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return self.fetchedResultsController.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.tasks.count;
+    id<NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section];
+    return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     GCRTaskCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell" forIndexPath:indexPath];
     
-    NSDictionary *task = self.tasks[indexPath.row];
-    cell.timeLabel.text = task[@"time"];
-    cell.repeatsLabel.text = task[@"repeats"];
-    cell.urlLabel.text = task[@"url"];
+    GCRTask *task = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.timeLabel.text = [self.dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:task.time]];
+    cell.repeatsLabel.text = [task repeatsText];
+    cell.urlLabel.text = task.urlString;
     
     return cell;
 }
@@ -67,54 +87,5 @@
 {
     return 66;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
