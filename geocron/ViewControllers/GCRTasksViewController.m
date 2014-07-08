@@ -9,6 +9,7 @@
 #import <CoreData/CoreData.h>
 #import "GCRTasksViewController.h"
 #import "GCRAppDelegate.h"
+#import "GCRNewTaskController.h"
 #import "GCRTaskCell.h"
 #import "GCRTask.h"
 
@@ -46,7 +47,6 @@
                                                                     managedObjectContext:managedObjectContext
                                                                       sectionNameKeyPath:nil
                                                                                cacheName:nil];
-    
     NSError *error = nil;
     if (![self.fetchedResultsController performFetch:&error]) {
         NSLog(@"Failed to fetch: %@", error);
@@ -56,6 +56,38 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"NewTaskSegue"]) {
+        UINavigationController *nagivationController = segue.destinationViewController;
+        GCRNewTaskController *newTaskController = nagivationController.viewControllers.firstObject;
+        __weak GCRTasksViewController *weakSelf = self;
+        newTaskController.blockForSuccessfulSave = ^{
+            [weakSelf reloadTasks];
+        };
+    }
+}
+
+#pragma mark - Private methods
+
+- (void)configureCell:(GCRTaskCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    GCRTask *task = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.timeLabel.text = [self.dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:task.time]];
+    cell.repeatsLabel.text = [task repeatsText];
+    cell.urlLabel.text = task.urlString;
+}
+
+- (void)reloadTasks
+{
+    NSError *error = nil;
+    if ([self.fetchedResultsController performFetch:&error]) {
+        [self.tableView reloadData];
+    } else {
+        NSLog(@"Failed to fetch: %@", error);
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -74,12 +106,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     GCRTaskCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell" forIndexPath:indexPath];
-    
-    GCRTask *task = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.timeLabel.text = [self.dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:task.time]];
-    cell.repeatsLabel.text = [task repeatsText];
-    cell.urlLabel.text = task.urlString;
-    
+    [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 

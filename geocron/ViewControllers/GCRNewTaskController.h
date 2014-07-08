@@ -14,6 +14,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *repeatsTextLabel;
 @property (nonatomic, weak) IBOutlet UITextField *urlStringField;
 
+@property (nonatomic, copy) void (^blockForSuccessfulSave)();
+
 - (IBAction)didTappedCancelButton:(id)sender;
 - (IBAction)didTappedSaveButton:(id)sender;
 

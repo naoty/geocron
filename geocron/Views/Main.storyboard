@@ -58,7 +58,7 @@
                     <navigationItem key="navigationItem" title="geocron" id="Wsp-Tn-1cB">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ioH-03-tvr">
                             <connections>
-                                <segue destination="vB9-B9-LAx" kind="modal" id="chm-e2-vzO"/>
+                                <segue destination="vB9-B9-LAx" kind="modal" identifier="NewTaskSegue" id="chm-e2-vzO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

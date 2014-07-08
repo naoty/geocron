@@ -69,6 +69,9 @@
         NSLog(@"Failed to save: %@", error);
     };
     
+    if (self.blockForSuccessfulSave) {
+        self.blockForSuccessfulSave();
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
