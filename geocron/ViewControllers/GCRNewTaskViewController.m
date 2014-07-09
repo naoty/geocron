@@ -1,22 +1,22 @@
 //
-//  GCRNewTaskController.m
+//  GCRNewTaskViewController.m
 //  geocron
 //
 //  Created by Naoto Kaneko on 2014/06/27.
 //  Copyright (c) 2014年 Naoto Kaneko. All rights reserved.
 //
 
-#import "GCRNewTaskController.h"
+#import "GCRNewTaskViewController.h"
 #import "GCRTaskDaysViewController.h"
 #import "GCRAppDelegate.h"
 #import "GCRTask.h"
 
-@interface GCRNewTaskController ()
+@interface GCRNewTaskViewController ()
 @property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) GCRTask *task;
 @end
 
-@implementation GCRNewTaskController
+@implementation GCRNewTaskViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,6 +33,13 @@
     GCRAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     self.managedObjectContext = appDelegate.managedObjectContext;
     self.task = [NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:self.managedObjectContext];
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:[NSDate date]];
+    components.hour = 0;
+    components.minute = 0;
+    NSDate *beginningOfToday = [calendar dateFromComponents:components];
+    self.timePicker.date = beginningOfToday;
 }
 
 - (void)viewWillAppear:(BOOL)animated

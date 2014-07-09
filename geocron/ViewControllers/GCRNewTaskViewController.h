@@ -1,5 +1,5 @@
 //
-//  GCRNewTaskController.h
+//  GCRNewTaskViewController.h
 //  geocron
 //
 //  Created by Naoto Kaneko on 2014/06/27.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GCRNewTaskController : UITableViewController
+@interface GCRNewTaskViewController : UITableViewController
 
 @property (nonatomic, weak) IBOutlet UIDatePicker *timePicker;
 @property (nonatomic, weak) IBOutlet UILabel *repeatsTextLabel;

@@ -9,7 +9,7 @@
 #import <CoreData/CoreData.h>
 #import "GCRTasksViewController.h"
 #import "GCRAppDelegate.h"
-#import "GCRNewTaskController.h"
+#import "GCRNewTaskViewController.h"
 #import "GCRTaskCell.h"
 #import "GCRTask.h"
 
@@ -62,7 +62,7 @@
 {
     if ([segue.identifier isEqualToString:@"NewTaskSegue"]) {
         UINavigationController *nagivationController = segue.destinationViewController;
-        GCRNewTaskController *newTaskController = nagivationController.viewControllers.firstObject;
+        GCRNewTaskViewController *newTaskController = nagivationController.viewControllers.firstObject;
         __weak GCRTasksViewController *weakSelf = self;
         newTaskController.blockForSuccessfulSave = ^{
             [weakSelf reloadTasks];

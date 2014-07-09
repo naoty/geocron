@@ -7,6 +7,7 @@
 //
 
 #import "GCRTask.h"
+#import "NSDate+GCRWeekday.h"
 
 @implementation GCRTask
 
@@ -76,6 +77,34 @@
     }
     
     return [repeatsTexts componentsJoinedByString:@", "];
+}
+
+#pragma mark - NSManagedObject
+
+- (void)didSave
+{
+    UIApplication *application = [UIApplication sharedApplication];
+    
+    NSDate *savedDate = [NSDate dateWithTimeIntervalSince1970:self.time];
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    formatter.dateFormat = @"HH:MM";
+    
+    NSInteger weekday = 1;
+    for (NSUInteger day = 1; day <= (1 << 6); day = (day << 1)) {
+        if ([self hasScheduleOnDay:day]) {
+            NSDate *firstFireDate = [savedDate nextWeekday:weekday];
+            
+            UILocalNotification *notification = [UILocalNotification new];
+            notification.fireDate = firstFireDate;
+            notification.timeZone = [NSTimeZone defaultTimeZone];
+            notification.repeatInterval = NSWeekCalendarUnit;
+            notification.alertAction = @"geocron";
+            notification.alertBody = self.urlString;
+            notification.soundName = UILocalNotificationDefaultSoundName;
+            [application scheduleLocalNotification:notification];
+        }
+        weekday++;
+    }
 }
 
 #pragma mark - Private methods
